@@ -1,0 +1,14 @@
+- Numba can be used to run your own Python functions on the GPU.
+- Functions may need to be modified to run correctly on a GPU.
+- Precede your kernel definition with the `__global__` keyword.
+- Use built-in variables `threadIdx`, `blockIdx`, `gridDim`, and `blockDim` to identify each thread.
+- Registers can be used to locally store data and avoid repeated memory operations.
+- Global memory is the main memory space and is used to share data between the host and GPU.
+- Local memory is a type of memory used to store data that does not fit in registers and is private to a thread.
+- Shared memory is faster than global and local memory.
+- Shared memory can be used as a user-controlled cache to speed up code.
+- The size of shared memory arrays must be known at compile time if allocated inside a thread.
+- It is possible to declare external shared memory arrays and pass the size during kernel invocation.
+- Use `__shared__` to allocate memory in the shared memory space.
+- Use `__syncthreads()` to wait for shared memory operations to be visible to all threads in a block.
+- Globally scoped arrays, whose size is known at compile time, can be stored in constant memory using the `__constant__` identifier.
